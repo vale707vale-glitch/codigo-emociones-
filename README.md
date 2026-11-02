@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ascenso
 
-## Getting Started
+Herramienta de autoconocimiento inspirada en el Mapa de Conciencia de David R. Hawkins. Permite calibrar tu estado emocional actual, registrar disparadores y recibir micro-intervenciones para subir de nivel hacia el Coraje (200).
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) + React 19 + TypeScript
+- Tailwind CSS 4
+- Recharts (graficos), canvas-confetti
+- Persistencia local en `localStorage` (sin backend)
+
+## Desarrollo
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build de produccion
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Estructura
 
-To learn more about Next.js, take a look at the following resources:
+- `app/` paginas: inicio, mapa, recursos, insights, diario
+- `components/` UI y ejercicios (respiracion, rueda de enfoque, soltar, etc.)
+- `lib/` logica: mapa Hawkins, contenido por nivel, intervenciones, insights, storage
+- `hooks/useAscenso.ts` estado global del cliente
+- `types/` tipos compartidos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Datos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Todos los datos se guardan en el navegador (`localStorage`). Usa la opcion de backup en Insights para exportar/importar un JSON y no perder tu historial.
 
-## Deploy on Vercel
+## Nota
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Es una herramienta de autoconocimiento, no un diagnostico ni sustituto de acompañamiento profesional de salud mental.
