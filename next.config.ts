@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
   trailingSlash: true,
-  basePath: isPages ? "/codigo-emociones" : "",
-  assetPrefix: isPages ? "/codigo-emociones/" : "",
+  basePath: isPages ? "/codigo-emociones-" : "",
+  assetPrefix: isPages ? "/codigo-emociones-/" : "",
 };
 
 export default nextConfig;
